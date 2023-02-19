@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #ball
+        {
+            width:80px;
+            height: 80px;
+            border: 2px solid orange;
+            border-radius: 100%;
+            background-color: red;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+
+        }
+        #mainlist
+        {
+            list-style: none;
+            position: relative;
+            left: 50px;
+            bottom: 240px;
+        }
+        .li
+        {
+            width: 140%;
+            height: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            text-transform: uppercase;
+            background-color: midnightblue;
+            position: relative;
+            right: 30px;
+        }
+        .li:hover,.sli:hover
+        {
+            background-color: rgb(199,255,242);
+        }
+        #sublist
+        {
+            list-style: none;
+        }
+        .sli
+        {
+            width: 120px;
+            position: relative;
+            left: 110px;
+            bottom: 55px;
+            background-color: orange;
+        }
+        #a
+        {
+         border-radius: 20px 0px 0px 0px;
+        }
+        #b
+        {
+            border-radius: 0px 0px 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="ball" onfocus="mainl()" onblur="mainls()">
+        <ul id="mainlist" style="display: none;">
+           <li id="a" class="li" onclick="subl()">Cars
+            <ul id="sublist" style="display: none;">
+            <li class="sli">BMW</li>
+            <li class="sli">RR</li>
+            <li class="sli">AUDI</li>
+            </ul>
+         </li>
+         <li class="li">Bikes</li>
+         <li class="li">jets</li>
+         <li id="b" class="li">Trains</li>
+        </ul>
+    </button>
+    <script>
+        function mainl()
+        {
+            document.getElementById("mainlist").removeAttribute("style")
+        }
+        function mainls()
+        {
+            document.getElementById("mainlist").setAttribute("style","display:none;")
+        }
+        function subl()
+        {
+            document.getElementById("sublist").removeAttribute("style")
+        }
+        function subls()
+        {
+            document.getElementById("sublist").setAttribute("style","display:none;")
+        }
+    </script>
+</body>
+</html>
